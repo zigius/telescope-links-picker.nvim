@@ -57,15 +57,18 @@ impl EventHandler {
             match Messages::from(event) {
                 // Handle 'Add'
                 Messages::Add => {
-                    let nums = values
-                        .iter()
-                        .map(|v| v.as_i64().unwrap())
-                        .collect::<Vec<i64>>();
+                    // let nums = values
+                    //     .iter()
+                    //     .map(|v| v.as_i64().unwrap())
+                    //     .collect::<Vec<i64>>();
 
-                    let sum = self.calculator.add(nums);
-                    self.nvim
-                        .command(&format!("echo \"Sum: {}\"", sum.to_string()))
-                        .unwrap();
+                    // let sum = self.calculator.add(nums);
+                    let mut query = String::from("");
+                    query.push_str(&format!("track:{} ", "abc"))
+                    // self.nvim
+                    //     .command("echo \"Sum: 3\"")
+                    //     // .command(&format!("echo \"Sum: {}\"", "3")
+                    //     .unwrap();
                 }
 
                 // Handle 'Multiply'
